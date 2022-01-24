@@ -1,0 +1,7 @@
+{
+  "name": "HolaMundoIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
