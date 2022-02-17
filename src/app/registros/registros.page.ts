@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/member-ordering */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RegistrosService } from './registros.service';
 @Component({
   selector: 'app-registros',
@@ -8,11 +9,23 @@ import { RegistrosService } from './registros.service';
   styleUrls: ['./registros.page.scss'],
 })
 export class RegistrosPage implements OnInit {
-  registros: Array<any>;
+  public registros: Array<any>;
 
-  constructor(private registrosService: RegistrosService) {}
+  constructor(
+    private registrosService: RegistrosService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.registros = this.registrosService.getRegistros();
+  }
+  ionViewWillEnter() {
+    this.registros = this.registrosService.getRegistros();
+  }
+  addRegistro() {
+    this.router.navigate(['new-registro']);
+  }
+  goToHome() {
+    this.router.navigate(['/home']);
   }
 }

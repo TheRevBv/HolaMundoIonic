@@ -14,7 +14,6 @@ const routes: Routes = [
   },
   {
     path: 'registros',
-
     children: [
       {
         path: '',
@@ -31,6 +30,13 @@ const routes: Routes = [
           ),
       },
     ],
+  },
+  {
+    path: 'new-registro',
+    loadChildren: () =>
+      import('./registros/registro-add/registro-add.module').then(
+        (m) => m.RegistroAddPageModule
+      ),
   },
 ];
 

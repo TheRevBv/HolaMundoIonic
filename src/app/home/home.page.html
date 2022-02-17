@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Hola Mundo desde Ionic </ion-title>
+  <ion-toolbar color="secondary">
+    <ion-title> Consumir API</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="registros"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">act1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <h1>Hola Mundo con ionic</h1>
-  </div>
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let foto of fotos">
+      <ion-img [src]="foto.thumbnailUrl"></ion-img>
+      <ion-card-content>
+        <p>{{foto.id}}</p>
+        <p>{{foto.title}}</p>
+        <ion-router-link color="danger" href="foto.url"
+          >{{foto.url}}</ion-router-link
+        >
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

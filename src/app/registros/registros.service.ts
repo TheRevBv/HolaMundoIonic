@@ -33,9 +33,22 @@ export class RegistrosService {
     return [...this.registros];
   }
   //Metodo para obtener un registro
-  getRegistro() {}
+  getRegistro(registroId: string) {
+    return {
+      ...this.registros.find((registro) => registro.id === registroId),
+    };
+  }
   //Metodo para añadir un registro
-  addRegistro() {}
-
-  deleteRegistro() {}
+  addRegistro(nombre: string, foto: string) {
+    this.registros.push({
+      nombre,
+      foto,
+      observaciones: [],
+      id: this.registros.length + 1 + '',
+    });
+  }
+  //Eliminar un registros
+  deleteRegistro(id: string) {
+    this.registros = this.registros.filter((registros) => registros.id !== id);
+  }
 }

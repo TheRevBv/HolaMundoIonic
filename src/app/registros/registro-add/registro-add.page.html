@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="registros"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar Registros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-content>
+            <ion-input type="text" #nombre placeholder="Nombre"></ion-input>
+            <ion-input type="text" #url placeholder="URL imagen"></ion-input>
+            <ion-button
+              (click)="guardarRegistro(nombre,url)"
+              expand="block"
+              fill="clear"
+              shape="round"
+            >
+              Guardar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
