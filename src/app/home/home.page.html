@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="secondary">
-    <ion-title> Consumir API</ion-title>
+  <ion-toolbar color="danger">
+    <ion-title>Consumir API</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="registros"></ion-back-button>
     </ion-buttons>
@@ -9,14 +9,12 @@
 
 <ion-content>
   <ion-list>
-    <ion-card *ngFor="let foto of fotos">
+    <ion-card color="danger" *ngFor="let foto of fotos">
       <ion-img [src]="foto.thumbnailUrl"></ion-img>
-      <ion-card-content>
+      <ion-card-content class="ion-text-center">
         <p>{{foto.id}}</p>
-        <p>{{foto.title}}</p>
-        <ion-router-link color="danger" href="foto.url"
-          >{{foto.url}}</ion-router-link
-        >
+        <p class="ion-text-uppercase">{{foto.title}}</p>
+        <a href="{{foto.url}}">{{foto.url}}</a>
       </ion-card-content>
     </ion-card>
   </ion-list>
