@@ -8,13 +8,9 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content color="medium">
+<ion-content>
   <ion-list>
-    <ion-item
-      *ngFor="let registro of registros"
-      [routerLink]="['/registros',registro.id]"
-      color="medium"
-    >
+    <ion-item *ngFor="let registro of registros" [routerLink]="['/registros',registro.id]">
       <ion-avatar slot="start">
         <ion-img src="{{registro.foto}}"> </ion-img>
       </ion-avatar>
